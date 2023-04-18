@@ -39,7 +39,21 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'authapi',
     'rest_framework',
+    'djoser',
+    'rest_framework.authtoken'
 ]
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES':(
+        'rest_framework.authentication.TokenAuthentication',
+    ), 
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',),
+    }
+DJOSER = {
+    "USER_ID_FIELD" : "username"
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
