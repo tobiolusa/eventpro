@@ -1,3 +1,3 @@
 from django.shortcuts import render
+from authapi.models import User
 
-# Create your views here.
