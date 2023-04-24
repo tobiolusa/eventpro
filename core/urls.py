@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from authapi.urls import authapi_urlpatterns
 from django.views.generic import TemplateView
 
@@ -24,6 +24,8 @@ urlpatterns = [
         template_name='swagger-ui.html',
         extra_context= {'schema_url': 'openapi-schema'}
         ), name='swagger-ui'),
+    path('', include('api_docs.urls')),
+
 ]
 
 urlpatterns += authapi_urlpatterns
