@@ -16,10 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from authapi.urls import authapi_urlpatterns
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-     
+    path('swagger-ui/', TemplateView.as_view(
+        template_name='swagger-ui.html',
+        extra_context= {'schema_url': 'openapi-schema'}
+        ), name='swagger-ui'),
 ]
 
 urlpatterns += authapi_urlpatterns
