@@ -40,9 +40,10 @@ INSTALLED_APPS = [
     'authapi',
     'rest_framework',
     'djoser',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
     'rest_framework_swagger',
-    'docs'
+    'docs',
+    'pyyaml',
 ]
 
 
